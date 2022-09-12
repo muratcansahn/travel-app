@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const app = express();
 const port = 3000;
 const pinRoute = require("./routes/pins");
+const userRoute = require("./routes/users");
 
 dotenv.config();
 app.use(express.json());
@@ -18,5 +19,6 @@ mongoose
   });
 
 app.use("/api/pins", pinRoute);
+app.use("/api/users", userRoute);
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
